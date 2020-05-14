@@ -1,0 +1,25 @@
+<%- include("partials/header") %>
+<div class="ui main text container segment">
+		<div class="ui huge header"><%= find.title %></div>
+				<div class="ui top attached ">
+						<div class="item">
+
+					<img  class="ui centered rounded image "src="<%= find.image%>"  width="600" height="400">
+						<div class="content">
+                            <span><%= find.created.toDateString() %></span>
+						</div>
+						<div class="description">
+								<p><%- find.body %></p>
+						</div>
+							<a  href="/blog/<%=find._id%>/edit" class=" ui orange basic button">Edit
+							</a>
+						<form  class="delete" action ="/blog/<%= find._id %>?_method=DELETE " method="POST">
+						<button class="ui red basic button">
+							Delete
+							</button>	
+							
+						</form>	
+				</div>				
+		</div>
+</div>
+<%- include("partials/footer") %>
